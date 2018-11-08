@@ -12,11 +12,11 @@ export var background_radius = 50
 export var background_resolution = 64
 
 #fields for the forground circle
-export var forground_color = Color(1,1,1)
-export var forground_stroke_width = 1
-export var forground_stroke_color = Color(0,0,0)
-export var forground_radius = 10
-export var forground_resolution = 64
+export var foreground_color = Color(1,1,1)
+export var foreground_stroke_width = 1
+export var foreground_stroke_color = Color(0,0,0)
+export var foreground_radius = 10
+export var foreground_resolution = 64
 
 # fake index for mouse
 const MOUSE_INDEX = -2
@@ -31,6 +31,12 @@ var value = Vector2(0,0)
 
 func _ready():
 	curr_pos = start_pos
+	
+func get_value():
+	return value
+	
+func is_active():
+	index != -1
 
 # Handles touch for the virtual analog controller and supports multi-touch
 func _input(event):
@@ -63,7 +69,7 @@ func _draw():
 	if index != -1 or persistent:
 		var radius = 50
 		draw_circle(start_pos, background_radius, background_color, background_resolution, background_stroke_width, background_stroke_color)
-		draw_circle(curr_pos, forground_radius, forground_color, forground_resolution, forground_stroke_width, forground_stroke_color)
+		draw_circle(curr_pos, foreground_radius, foreground_color, foreground_resolution, foreground_stroke_width, foreground_stroke_color)
 	
 func draw_circle(center, radius, color, nb_points, stroke_width, stroke_color):
 	var points_arc = PoolVector2Array()
