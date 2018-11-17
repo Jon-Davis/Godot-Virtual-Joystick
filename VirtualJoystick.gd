@@ -36,7 +36,7 @@ func get_value():
 	return value
 	
 func is_active():
-	index != -1
+	return index != -1
 
 # Handles touch for the virtual analog controller and supports multi-touch
 func _input(event):
@@ -63,6 +63,7 @@ func handle_press(event, _index):
 	elif (index == _index) and not event.is_pressed():
 		index = -1
 		curr_pos = start_pos
+		value = Vector2(0,0)
 		self.update()
 	
 func _draw():
