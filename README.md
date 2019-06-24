@@ -15,7 +15,7 @@ Persistent - If persistent is set to true then the virtual joystick will always 
 
 Start Pos - If persistent then start pos is the initial position of the virtual joystick
 
-Mouse Trigger - Defaults to left mouse button, determines what mouse button is used to control the virtual joystick, usefull for debuging
+Mouse Trigger - Defaults to left mouse button, determines what mouse button is used to control the virtual joystick, useful for debuging
 
 ## BACKGROUND
 Background Color - What color the background circle will be
