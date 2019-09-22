@@ -69,10 +69,10 @@ func handle_press(event, _index):
 func _draw():
 	if index != -1 or persistent:
 		var radius = 50
-		draw_circle(start_pos, background_radius, background_color, background_resolution, background_stroke_width, background_stroke_color)
-		draw_circle(curr_pos, foreground_radius, foreground_color, foreground_resolution, foreground_stroke_width, foreground_stroke_color)
+		draw_circle_custom(start_pos, background_radius, background_color, background_resolution, background_stroke_width, background_stroke_color)
+		draw_circle_custom(curr_pos, foreground_radius, foreground_color, foreground_resolution, foreground_stroke_width, foreground_stroke_color)
 	
-func draw_circle(center, radius, color, nb_points, stroke_width, stroke_color):
+func draw_circle_custom(center, radius, color, nb_points, stroke_width, stroke_color):
 	var points_arc = PoolVector2Array()
 	points_arc.push_back(center)
 	var colors = PoolColorArray([color])
